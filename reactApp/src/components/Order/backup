@@ -1,0 +1,93 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
+import { order } from '../../api/order';
+
+import "./Order.css";
+
+const Order = () => {
+  return (
+    <React.Fragment>
+      <div className="orderForm">
+        <div className="heading">
+          <h1>Enter Order Details</h1>
+        </div>
+        <form className="inputs" onSubmit={() => {
+          //order(session, c_id, weight, rate, service, type, comments, e_id)
+          //Call function and pass all the valules of the form field in that (API works fine)
+        }}>
+          <input type="text" name="emp_id" placeholder="Employer Id" />
+          <input
+            type="text"
+            name="cust_id"
+            placeholder="Customer Id"
+          />
+          <input type="number" name="weight" placeholder="Weight" />
+          <input type="number" name="rate" placeholder="Rate" />
+          <br />
+          <label for="services">Choose the Service:</label>
+          <select id="service" name="service">
+            <option value="washing">Washing</option>
+            <option value="dry">Dry Cleaning</option>
+            <option value="pressing">Pressing</option>
+          </select>
+          <br />
+          <br />
+          <label for="types">Choose a type:</label>
+          <select id="type" name="type">
+            <option value="pickup">Pick Up</option>
+            <option value="delivery">Delivery</option>
+          </select>
+          <br />
+          <br />
+
+          <input type="text" name="comments" placeholder="Comments" />
+          <button
+            type="button"
+            name="button"
+            className="order"
+            onclick="placeOrder()"
+          >
+            Place Order
+          </button>
+        </form>
+      </div>
+      <div className="modal">
+        <div className="heading">
+          <h1>Order Summary</h1>
+        </div>
+
+        <div className="details">
+          <p>
+            Order Id : <span id="id">#OD1244</span>{" "}
+          </p>
+          <p>
+            Customer Id : <span id="cust_id"></span>{" "}
+          </p>
+          <p>
+            Service : <span id="service"></span>{" "}
+          </p>
+          <p>
+            Order Item : <span id="item"></span>{" "}
+          </p>
+          <p>
+            Weight : <span id="weight"></span>{" "}
+          </p>
+
+          <button
+            type="button"
+            name="button"
+            onclick="modal()"
+            className="btn__close"
+          >
+            {" "}
+            Close
+          </button>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export default Order;

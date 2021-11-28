@@ -1,0 +1,163 @@
+/*
+Ahuja, Srajan - 1001858728
+Ranthilake, Erandi - 1001614967
+Kotha, Krishna - 1001902092
+*/
+.options {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+  }
+  
+  
+  .options.active{
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  
+  .options .heading{
+    text-align: center;
+    font-size: 32px;
+    margin: 32px;
+    color : #393E46;
+    text-decoration: underline;
+  }
+  
+  
+  
+  .options .types{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+  }
+  
+  .options .type a{
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color : white;
+    background: #222831;
+    border : 1px solid #222831;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  
+  .options .type a:hover{
+    color : #222831;
+    background: #EEEEEE;
+  }
+  
+  .forms{
+    padding: 64px;
+    border: 1px solid #00ADB5;
+    border-radius: 16px;
+    width: 80%;
+    margin: auto;
+    margin-top: 32px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  
+  .forms.active{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* .orderForm .heading{
+    text-align: center;
+  } */
+  
+  .forms .heading  h1{
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  
+  
+  .forms .inputs input{
+    display: block;
+    margin-bottom: 16px;
+    width: 30%;
+    background: #EEEEEE;
+    padding: 16px;
+    border :0;
+    outline: 0;
+    border-bottom : 1px solid rgba(0,0,0,0.5);
+  }
+  
+  .forms .order{
+    padding: 16px;
+    background-color: #00ADB5;
+    border : 0;
+    color : white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border : 1px solid #00ADB5;
+    transition: 0.5s;
+  }
+  
+  .forms .order:hover{
+    color : #00ADB5;
+    background: #EEEEEE;
+  }
+  
+  .modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 32px;
+    border-radius: 16px;
+    /* border : 1px solid #222831; */
+    transform: translate(-50% , -50%);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 2;
+    background: #EEEEEE;
+  }
+  
+  .modal.active{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal .heading{
+    margin-bottom: 16px;
+  }
+  
+  .modal .details p{
+    margin-bottom: 8px;
+  }
+  
+  .modal .btn__close{
+    background: #222831;
+    color : white;
+    padding: 16px;
+    border-radius: 8px;
+    border:0;
+    cursor: pointer;
+    outline: 0;
+  }
+  
+  .modal .btn__close:active , .modal .btn__close:focus{
+    outline: 0;
+    border :0;
+  }
+  
+  @media (max-width : 767px) {
+      .forms{
+        padding: 24px;
+      }
+  
+      .modal{
+        width: 75%;
+        top : 40%;
+      }
+  }
+  

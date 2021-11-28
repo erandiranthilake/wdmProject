@@ -1,0 +1,110 @@
+/*
+Ahuja, Srajan - 1001858728
+Ranthilake, Erandi - 1001614967
+Kotha, Krishna - 1001902092
+*/
+/*
+Font -  Sans serif
+*/
+*{
+    margin : 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body{
+    background-color: #EEEEEE;
+  }
+  
+  
+  .navigation .logo a{
+    color : white;
+    text-decoration: none;
+    
+  }
+  
+  .navigation{
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    background: #222831;
+    color : white;
+    align-items: center;
+  }
+  
+  
+  .navigation .links ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    
+  }
+  
+  
+  .navigation .links ul li{
+    cursor: pointer;
+    padding: 16px;
+    transition: 0.5s;
+    margin-right: 8px;
+    border-radius: 4px;
+  }
+  
+  .navigation .links ul li:hover{
+    background: #00ADB5;
+  }
+  
+  .navigation .links ul li a{
+    color : white;
+    text-decoration: none;
+  }
+  
+  @media (max-width : 767px) {
+    .navigation .links ul li{
+      padding: 8px;
+    }
+  }
+  
+.manager_portal .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 32px;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 20%;
+  
+  }
+  
+  .manager_portal .links .link{
+    text-align: center;
+    background: #393E46;
+    border-radius: 4px;
+    padding: 16px;
+  }
+  
+  .manager_portal .links .link a{
+    text-decoration: none;
+    color : white;
+  }
+  
+  @media (max-width : 1023px) {
+    .manager_portal .links {
+      margin: 32px 10%;
+    }
+  }
+  
+  @media (max-width : 767px) {
+    .hero__section h1{
+      font-size: 5.5rem;
+      text-align: center;
+    }
+    .service__container {
+      grid-template-columns: minmax(0,1fr);
+    }
+    .manager_portal .links {
+      grid-template-columns: 1fr;
+    }
+  
+  
+  }
+  

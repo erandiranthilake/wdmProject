@@ -1,0 +1,17 @@
+[
+  {
+    "equipmentId": "12345",
+    "availability": "Available",
+    "type": "Washing Machine"
+  },
+  {
+    "equipmentId": "8764",
+    "availability": "Not Available",
+    "type": "Drying Machine"
+  },
+  {
+    "equipmentId": "432546",
+    "availability": "Not Available",
+    "type": "Iron"
+  }
+]

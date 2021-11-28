@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+  <script type="text/javascript">
+  let elem = document.getElementById("test");
+  elem.setAttribute("onclick","showForm();");
+  function showForm(){
+    document.getElementsByClassName('options')[0].classList.toggle('active');
+    document.getElementsByClassName('forms')[0].classList.toggle('active');
+  }
+
+  function placeOrder(){
+    let id = document.getElementsByName('cust_id')[0].value;
+    let item = document.getElementsByName('item')[0].value;
+    let quant = document.getElementsByName('quantity')[0].value;
+
+    document.getElementById('cust_id').innerHTML = id;
+    document.getElementById('item').innerHTML = item;
+    document.getElementById('quantity').innerHTML = quant;
+
+    document.getElementsByClassName('modal')[0].classList.add('active');
+  }
+
+  function modal(){
+    document.getElementsByClassName('modal')[0].classList.toggle('active');
+  }
+  </script>
+    <script type="text/javascript">
+      let type = ['' , 'Delivery' , 'Pickup'];
+      let status = ['' , 'Pending' , 'Late' , 'Completed']
+      let data = [
+        {
+          name : 'Washing Machine',
+          id : '#CD001',
+          type : 1,
+          status : 1,
+          odid : "#OD234",
+          d_id : 1
+        },
+        {
+          name : 'Washing Machine',
+          id : '#CD001',
+          type : 2,
+          status : 2,
+          odid : "#OD234",
+          d_id : 2
+        },
+        {
+          name : 'Washing Machine',
+          id : '#CD001',
+          type : 1,
+          status : 3,
+          odid : "#OD234",
+          d_id : 3
+        },
+        {
+          name : 'Washing Machine',
+          id : '#CD001',
+          type : 2,
+          status : 1,
+          odid : "#OD234",
+          d_id : 4
+        },
+        {
+          name : 'Washing Machine',
+          id : '#CD001',
+          type : 1,
+          status : 2,
+          odid : "#OD234",
+          d_id : 5
+        }
+    ];
+  
+    function filterStatus() {
+      let value = document.getElementsByName('filerType')[0].value;
+      let table = document.getElementById('content__table');
+      table.innerHTML = ``;
+      table.innerHTML = `
+      <thead>
+        <th>
+          Service Name
+        </th>
+        <th>
+          Customer Id
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Order Id
+        </th>
+        <th>
+          Actions
+        </th>
+      </thead>
+      `;
+  
+      if(value == 0){
+        data.forEach((item, i) => {
+          let content = renderTable(item);
+  
+        table.innerHTML += content;
+  
+        });
+      }
+  
+    else {
+      data.forEach((item, i) => {
+        if(item.status == value){
+          let content = renderTable(item);
+        table.innerHTML += content;
+        }
+      });
+  
+    }
+    }
+  
+    function filterType(){
+      let value = document.getElementsByName('filerAvail')[0].value;
+      let table = document.getElementById('content__table');
+      table.innerHTML = `
+      <thead>
+        <th>
+          Service Name
+        </th>
+        <th>
+          Customer Id
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Order Id
+        </th>
+        <th>
+          Actions
+        </th>
+      </thead>
+      `;
+      if(value == 0){
+        data.forEach((item, i) => {
+          let content = renderTable(item);
+  
+        table.innerHTML += content;
+  
+        });
+      }
+  
+    else {
+      data.forEach((item, i) => {
+        if(item.type == value){
+        let content = renderTable(item);
+        table.innerHTML += content;
+        }
+      });
+  
+    }
+  
+    }
+  
+    function markComplete(id){
+      let table = document.getElementById('content__table');
+      table.innerHTML = ``;
+      table.innerHTML = `
+      <thead>
+        <th>
+          Service Name
+        </th>
+        <th>
+          Customer Id
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Order Id
+        </th>
+        <th>
+          Actions
+        </th>
+      </thead>
+      `;
+  
+      data.forEach((item, i) => {
+        if(item.d_id == id){
+          item.status = 3;
+        }
+      let content = renderTable(item);
+      table.innerHTML += content;
+      });
+  
+    }
+  
+  
+    function markLate(id){
+      let table = document.getElementById('content__table');
+      table.innerHTML = ``;
+      table.innerHTML = `
+      <thead>
+        <th>
+          Service Name
+        </th>
+        <th>
+          Customer Id
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Order Id
+        </th>
+        <th>
+          Actions
+        </th>
+      </thead>
+      `;
+  
+      data.forEach((item, i) => {
+        if(item.d_id == id){
+          item.status = 2;
+        }
+      let content = renderTable(item);
+      table.innerHTML += content;
+      });
+  
+    }
+  
+  
+    function renderTable(item){
+      let content = ''
+      content +=`
+      <tr>
+        <td>
+          ${item.name}
+        </td>
+        <td>
+          ${item.id}
+        </td>
+        <td>
+          ${type[item.type]}
+        </td>
+        <td>
+          ${status[item.status]}
+        </td>
+        <td>
+          ${item.odid}
+        </td>
+      `;
+  
+      if(item.status == 1){
+        content +=    `
+          <td>
+            <a href="javascript:void(0)" class="late" onclick="markLate(${item.d_id})">Late</a>
+            <a href="javascript:void(0)" class="complete" onclick="markComplete(${item.d_id})">Complete</a>
+          </td>
+              </tr>
+          `;
+      }
+      else if (item.status == 2){
+       content +=  `
+        <td>
+          <a href="javascript:void(0)" class="complete" onclick="markComplete(${item.d_id})">Complete</a>
+        </td>
+            </tr>
+        `;
+      }
+      return content
+    }
+  
+    filterStatus();
+    </script>
+
+<script type="text/javascript">
+  let data = [
+    {
+      type : 'Washing Machine',
+      id : '#M001',
+      avail : 'Available',
+      odid : ""
+    },
+    {
+      type : 'Drying Machine',
+      id : '#M002',
+      avail : 'Available',
+      odid : ""
+    },
+    {
+      type : 'Washing Machine',
+      id : '#M003',
+      avail : 'Not Available',
+      odid : "#OD234"
+    },
+    {
+      type : 'Iron',
+      id : '#M004',
+      avail : 'Available',
+      odid : ""
+    },
+    {
+      type : 'Basket',
+      id : '#M005',
+      avail : 'Not Available',
+      odid : "#OD234"
+    }
+];
+
+function filterType(){
+    let value = document.getElementsByName('filerType')[0].value;
+    let table = document.getElementById('content__table');
+    table.innerHTML = `
+    <thead>
+      <th>
+        Type
+      </th>
+      <th>
+        Equipment ID
+      </th>
+      <th>
+        Availability
+      </th>
+      <th>
+        Order Id
+      </th>
+
+    </thead>
+    `;
+
+    if(value == 0){
+      data.forEach((item, i) => {
+        table.innerHTML +=`
+        <tr>
+          <td>
+            ${item.type}
+          </td>
+          <td>
+            ${item.id}
+          </td>
+          <td>
+            ${item.avail}
+          </td>
+          <td>
+            ${item.odid}
+          </td>
+        </tr>
+        `;
+      });
+    }
+
+  else {
+    data.forEach((item, i) => {
+      if(item.type == value){
+        table.innerHTML +=`
+        <tr>
+          <td>
+            ${item.type}
+          </td>
+          <td>
+            ${item.id}
+          </td>
+          <td>
+            ${item.avail}
+          </td>
+          <td>
+            ${item.odid}
+          </td>
+        </tr>
+        `;
+      }
+    });
+
+  }
+}
+
+
+function filterAvail(){
+  let value = document.getElementsByName('filerAvail')[0].value;
+  let table = document.getElementById('content__table');
+  table.innerHTML = `
+  <thead>
+    <th>
+      Type
+    </th>
+    <th>
+      Equipment ID
+    </th>
+    <th>
+      Availability
+    </th>
+    <th>
+      Order Id
+    </th>
+
+  </thead>
+  `;
+  if(value == 0){
+    data.forEach((item, i) => {
+      table.innerHTML +=`
+      <tr>
+        <td>
+          ${item.type}
+        </td>
+        <td>
+          ${item.id}
+        </td>
+        <td>
+          ${item.avail}
+        </td>
+        <td>
+          ${item.odid}
+        </td>
+      </tr>
+      `;
+    });
+  }
+  else {
+    data.forEach((item, i) => {
+      if(item.avail == value){
+        table.innerHTML +=`
+        <tr>
+          <td>
+            ${item.type}
+          </td>
+          <td>
+            ${item.id}
+          </td>
+          <td>
+            ${item.avail}
+          </td>
+          <td>
+            ${item.odid}
+          </td>
+        </tr>
+        `;
+      }
+  })
+}
+}
+filterType();
+</script>
+  <script type="text/javascript" src="./js/chatbot.js" ></script> 
+ <script type="text/javascript" src="./js/constants.js" ></script>
+</html>

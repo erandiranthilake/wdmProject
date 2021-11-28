@@ -1,0 +1,55 @@
+/*
+Ahuja, Srajan - 1001858728
+Ranthilake, Erandi - 1001614967
+Kotha, Krishna - 1001902092
+*/
+.services h1{
+    text-align: center;
+    color : #00ADB5;
+    padding: 16px;
+    margin-top: 64px;
+  }
+  
+  .services .listcontent{
+    padding: 16px;
+    margin-top: 64px;
+    text-align: left;
+  }
+  
+  .service__container {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+    margin: 32px 5%;
+    grid-gap: 32px;
+  }
+  
+  .service{
+    padding: 32px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  
+  .service img{
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .service p{
+    margin-top: 32px;
+  }
+  
+  @media (max-width : 1023px) {
+    .service__container {
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    }
+  }
+  
+  @media (max-width : 767px) {
+  
+    .service__container {
+      grid-template-columns: minmax(0,1fr);
+    }
+  
+  }
+  

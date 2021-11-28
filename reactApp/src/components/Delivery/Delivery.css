@@ -1,0 +1,84 @@
+/*
+Ahuja, Srajan - 1001858728
+Ranthilake, Erandi - 1001614967
+Kotha, Krishna - 1001902092
+*/
+.equipments .heading {
+  text-align: center;
+  margin: 32px;
+}
+
+.equipments .table {
+  width: 80%;
+  margin: auto;
+}
+
+.equipments .table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.equipments table th {
+  padding: 16px;
+  background: #00adb5;
+  color: black;
+}
+
+.equipments table tbody:nth-child(odd) {
+  background: #f1f1f1;
+}
+
+.equipments table tbody:nth-child(even) {
+  background: #f4f4f4;
+}
+
+.equipments table td {
+  padding: 16px;
+  text-align: center;
+}
+
+.equipments .table a {
+  /* color: white; */
+  /* text-decoration: none; */
+  display: inline-block;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.equipments .table a.late {
+  background-color: #ff2e63;
+  margin-right: 8px;
+}
+
+.equipments .table a.complete {
+  background-color: #00adb5;
+}
+
+.filter__sort {
+  display: flex;
+  justify-content: center;
+}
+
+.filter {
+  margin-top: 32px;
+  margin-left: 32px;
+}
+
+.filter p {
+  margin-bottom: 8px;
+}
+
+.filter select {
+  background: #eeeeee;
+}
+
+@media (max-width: 767px) {
+  .equipments .table {
+    position: relative;
+    overflow: scroll;
+  }
+
+  .equipments .table table {
+    min-width: 700px;
+  }
+}
