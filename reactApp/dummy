@@ -1,0 +1,8 @@
+let today = new Date().getDate();
+    today = today.toString();
+    today = today.substring(0, 10);
+    console.log(today);
+    const filterByExpiration = data.filter((items)  => {
+        let itemDate = items.updated_at.substring(0,10);
+        return itemDate === today;
+  });
