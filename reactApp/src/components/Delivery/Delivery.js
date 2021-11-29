@@ -14,7 +14,7 @@ class Delivery extends Component {
 
   async componentDidMount() {
     const res = await axios.get("http://127.0.0.1:8000/api/orders");
-
+    console.log(res);
     if (res.data.status === 200) {
       this.setState({
         orders: res.data.orders,

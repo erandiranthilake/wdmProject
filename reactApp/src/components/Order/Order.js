@@ -95,7 +95,7 @@ class Order extends Component {
           <input
             onChange={this.handle}
             type="text"
-            name="comments"
+            name="miscellaneous"
             value={this.state.miscellaneous}
             placeholder="Comments"
           />
