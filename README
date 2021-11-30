@@ -5,20 +5,60 @@ To run the project.
 3. Navigate to laravelapi folder and run the following command.
    (assuming we are building the laravel project using composer)
 
-'composer update'
-'php artisan migrate'
-'php artisan serve'
+'composer update' -> create the 'vendor' folder with laravel dependancies
+'php artisan migrate' -> run the migrations to create tables and seed them
+'php artisan serve' -> start the php server
 
-4. Navigate to the reactApp folder and run the following commands.
+4. Navigate to the reactApp folder in a new tab and run the following commands.
 
-'npm install'
-'npm start'
+'npm install' -> geenrate node_modules folder with dependancies
+'npm start' -> start the react application
 
-5. Users with different privilages will be populated in 'serviceuser' table.
+5. Users with different privilages(Roles) will be populated in 'serviceuser' table.
 6. login using those credentials to navigate through different portals.
 
-PHASE 4 -> PHASE 5
+## PHASE 4 -> PHASE 5
 
 In phase 4 we had the php APIs written in the .php files and calling then from the front end application.
 In phase 5 we have adopted teh Laravel Framework and have used the Models, Controllers to build the APIs.
 In addition we used the migration functionality of teh framework to create the tables and seed them with data.
+
+When creating the Laravel API endpoints we followed the following pattern
+
+## Models: Models defines the table fields,below is below is an example.
+
+class Order extends Model
+{
+use HasFactory;
+protected $table = 'orders';
+protected $fillable = [
+'e_id',
+'c_id',
+'weight',
+'service',
+'amount',
+'status',
+'type',
+'miscellaneous'
+];
+}
+
+## Controllers: Controllers does the CRUD operations, below is an example.
+
+public function addEquipment(Request $request)
+{
+$equipment = new Equipment();
+$equipment->EquipmentType = $request->input('EquipmentType');
+$equipment->Availability = $request->input('Availability');
+$equipment->save();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Equipment added successfully'
+        ]);
+
+}
+
+## Routes: Please define the routes here
+
+Route::post('/add-equipment', [EquipmentController::class, 'addEquipment']);
