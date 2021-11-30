@@ -22,6 +22,11 @@ const Navbar = () => {
             <li>
               <Link to="/About">About</Link>
             </li>
+            <UnlockAccess request={[ROLES.ROLE_USER]}>
+              <li>
+                <Link to="/EmployerPortal">Employer Portal</Link>
+              </li>
+            </UnlockAccess>
             <UnlockAccess request={[ROLES.ROLE_MANAGER]}>
               <li>
                 <Link to="/ManagerPortal">Manager Portal</Link>
@@ -51,14 +56,23 @@ const Navbar = () => {
                 <Link to="/Login">Login</Link>
               </li>
             </UnlockAccess>
-            <UnlockAccess request={[ROLES.ROLE_MANAGER, ROLES.ROLE_USER, ROLES.ROLE_CUSTOMER, ROLES.ROLE_SUPER_ADMIN]}>
+            <UnlockAccess
+              request={[
+                ROLES.ROLE_MANAGER,
+                ROLES.ROLE_USER,
+                ROLES.ROLE_CUSTOMER,
+                ROLES.ROLE_SUPER_ADMIN,
+              ]}
+            >
               <li>
                 <Link to="/Logout">Logout</Link>
               </li>
             </UnlockAccess>
             <li>
-            <a target="_blank" href="http://sxa8728.uta.cloud/blog2/">Blog</a>
-              </li>
+              <a target="_blank" href="http://sxa8728.uta.cloud/blog2/">
+                Blog
+              </a>
+            </li>
           </ul>
         </div>
       </div>

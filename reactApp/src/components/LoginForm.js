@@ -30,6 +30,7 @@ const LoginForm = () => {
             "userRoles",
             JSON.stringify([res.data.serviceUser.Role])
           );
+          localStorage.setItem("id", res.data.serviceUser.id);
           history.replace("/");
           window.location.reload();
         } else {

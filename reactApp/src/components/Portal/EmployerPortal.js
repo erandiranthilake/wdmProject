@@ -6,7 +6,7 @@ import "./ManagerPortal.css";
 import "../Delivery/Delivery.css";
 import "../Order/Order.css";
 
-const ManagerPortal = () => {
+const EmployerPortal = () => {
   const [data, setData] = useState();
 
   useEffect(async () => {
@@ -36,22 +36,22 @@ const ManagerPortal = () => {
   return (
     <React.Fragment>
       <div class="manager_portal">
-        <h1>Welcome to the Manager Portal</h1>
+        <h1>Welcome to the Employer Portal</h1>
 
         <div class="links">
           <div class="link">
-            <Link to="/EmpRegistration">Employees</Link>
+            <Link to="/register">Customers</Link>
           </div>
           <div class="link">
-            <Link to="/ServiceRegistration">Services</Link>
+            <Link to="/order">Orders</Link>
           </div>
           <div class="link">
-            <Link to="/EquipRegistration">Equipments</Link>
+            <Link to="/equipment">Equipments</Link>
           </div>
         </div>
       </div>
 
-      <div class="equipments">
+      {/* <div class="equipments">
         <div class="heading">
           <h1>Daily Tasks:</h1>
         </div>
@@ -72,9 +72,9 @@ const ManagerPortal = () => {
             <tbody>{dataHtml}</tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };
 
-export default ManagerPortal;
+export default EmployerPortal;

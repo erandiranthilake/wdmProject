@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./Order.css";
 
-class UpdateOrder extends Component {
+class Checkout extends Component {
   state = {
     id: 0,
     e_id: 0,
@@ -32,10 +32,10 @@ class UpdateOrder extends Component {
         weight: res.data.order.weight,
         service: res.data.order.service,
         amount: res.data.order.amount,
-        status: res.data.order.status,
+        status: "Complete",
         type: res.data.order.type,
         paymentMethod: res.data.order.paymentMethod,
-        paymentStatus: res.data.order.paymentStatus,
+        paymentStatus: "Complete",
         miscellaneous: res.data.order.miscellaneous,
       });
     }
@@ -66,7 +66,7 @@ class UpdateOrder extends Component {
     return (
       <div className="orderForm">
         <div className="heading">
-          <h3>Update Order</h3>
+          <h3>Checkout Order</h3>
           <br />
         </div>
         <form class="inputs" onSubmit={this.updateOrder}>
@@ -84,33 +84,19 @@ class UpdateOrder extends Component {
             name="e_id"
             value={this.state.e_id}
           />
-          <label>Customer ID:</label>
-          <input
-            onChange={this.handle}
-            type="number"
-            name="c_id"
-            value={this.state.c_id}
-          />
-          <label>Weight:</label>
-          <input
-            onChange={this.handle}
-            type="number"
-            name="weight"
-            value={this.state.weight}
-          />
-          <label>Amount:</label>
-          <input
-            onChange={this.handle}
-            type="number"
-            name="amount"
-            value={this.state.amount}
-          />
           <label>Service:</label>
           <input
             onChange={this.handle}
             type="text"
             name="service"
             value={this.state.service}
+          />
+          <label>Amount:</label>
+          <input
+            onChange={this.handle}
+            type="text"
+            name="amount"
+            value={this.state.amount}
           />
           <label>Deliver Type:</label>
           <input
@@ -144,4 +130,4 @@ class UpdateOrder extends Component {
   }
 }
 
-export default UpdateOrder;
+export default Checkout;

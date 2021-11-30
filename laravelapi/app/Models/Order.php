@@ -17,6 +17,8 @@ class Order extends Model
         'amount',
         'status',
         'type',
+        'paymentMethod',
+        'paymentStatus',
         'miscellaneous'
     ];
 }

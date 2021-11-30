@@ -33,7 +33,7 @@ class CreateServiceusersTable extends Migration
         });
 
         DB::statement("INSERT INTO `serviceusers` (`id`, `Fname`, `Minit`, `Lname`, `Email`, `Password`, `PhoneNumber`, `Street1`, `Street2`, `City`, `State`, `ZipCode`, `Ssn`, `Role`, `created_at`, `updated_at`) VALUES
-        (1, 'Erandi', 'K', 'Ranthilake', 'erandiranthilake@gmail.com', 'customer', 4699013076, '3508 Hasland Dr, wewe', 'wewe', 'Flower Mound', 'TX', 75022, 0, 'ROLE_CUSTOMER', '2021-11-28 06:44:11', '2021-11-28 06:44:11'),
+        (1, 'Customer', 'K', 'Customer Lastname', 'customer@gmail.com', 'customer1234', 123456, '3508 Flower Dr, wewe', 'wewe', 'Flower Mound', 'TX', 12345, 0, 'ROLE_CUSTOMER', '2021-11-28 06:44:11', '2021-11-28 06:44:11'),
         (2, 'Manager', 'K', 'Manager LastName', 'manager@gmail.com', 'manager1234', 12345678, '1234 Flower Drive', 'Street 2', 'Flower Mound', 'TX', 12345, 0, 'ROLE_MANAGER', '2021-11-28 06:47:04', '2021-11-28 06:47:04'),
         (3, 'Employer', 'K', 'Employer Lastname', 'employer@gmail.com', 'employer1234', 1234567, '3508 Flower Dr,', 'wewe', 'Flower Mound', 'TX', 12345, 3456789, 'ROLE_USER', '2021-11-28 07:08:31', '2021-11-28 07:08:31'),
         (4, 'SuperAdmin', 'K', 'SuperAdmin Lastname', 'superadmin@gmail.com', 'superadmin1234', 1234456, '3508 Flower Dr,', 'wewe', 'Flower Mound', 'TX', 12345, 123456, 'ROLE_SUPER_ADMIN', '2021-11-28 07:11:34', '2021-11-28 07:11:34'),

@@ -42,6 +42,17 @@ class ServiceUserController extends Controller
         ]);
     }
 
+    public function getServiceUser($id)
+    {
+        $serviceUser = ServiceUser::find($id);
+
+        return response()->json([
+            'status' => 200,
+            'serviceUser' => $serviceUser
+
+        ]);
+    }
+
     public function getServiceUserByEmail($email)
     {
         $serviceUser = ServiceUser::where('Email', $email)->firstOrFail();
@@ -49,6 +60,17 @@ class ServiceUserController extends Controller
         return response()->json([
             'status' => 200,
             'serviceUser' => $serviceUser
+
+        ]);
+    }
+
+    public function getServiceUsersByRole($role)
+    {
+        $serviceUsers = ServiceUser::where('Role', $role)->get();
+
+        return response()->json([
+            'status' => 200,
+            'serviceUsers' => $serviceUsers
 
         ]);
     }

@@ -30,4 +30,44 @@ class EquipmentController extends Controller
 
         ]);
     }
+
+    public function getEquipment($id)
+    {
+        error_log('Some message here.');
+
+        $equipment = Equipment::find($id);
+
+        return response()->json([
+            'status' => 200,
+            'equipment' => $equipment
+
+        ]);
+    }
+
+    public function updateEquipment(Request $request, $id)
+    {
+        $equipment = Equipment::find($id);
+
+        $equipment->EquipmentType = $request->input('EquipmentType');
+        $equipment->Availability = $request->input('Availability');
+        $equipment->update();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Equipment updated successfully'
+
+        ]);
+    }
+
+    public function deleteEquipment($id)
+    {
+        $equipment = Equipment::find($id);
+        $equipment->delete();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Equipment deleted successfully'
+
+        ]);
+    }
 }

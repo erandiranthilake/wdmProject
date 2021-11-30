@@ -6,76 +6,76 @@ Kotha, Krishna - 1001902092
 /*
 Font -  Ephesis
 */
-.hero__section{
-    background: url('https://fluffandfoldlaundromat.com/wp-content/uploads/2020/10/5-Benefits-of-a-Laundry-Service.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 90vh;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .hero__section h1{
-    color : black;
-    font-size: 8rem;
-    font-family: 'Ephesis', cursive;
-    text-decoration: underline;
-    
-  }
-  
-  .hero__section p{
-    color : black;
-    font-size: 4rem;
-    font-family: 'Ephesis', cursive;
-    
-    
-  }
-  
-  .other__services .links {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 32px;
-    justify-content: center;
-    align-items: center;
-    margin: 32px 20%;
-    padding-bottom: 5%;
-  
-  }
-  
-  .other__services .links .link{
-    text-align: center;
-    background: #393E46;
-    border-radius: 4px;
-    padding: 16px;
-  }
-  
-  .other__services .links .link a{
-    text-decoration: none;
-    color : white;
-  }
-  
-  @media (max-width : 1023px) {
-    .other__services .links {
-      margin: 32px 10%;
-    }
-  }
-  
-  @media (max-width : 767px) {
-    .hero__section h1{
-      font-size: 5.5rem;
-      text-align: center;
-    }
-    .service__container {
-      grid-template-columns: minmax(0,1fr);
-    }
-    .other__services .links {
-      grid-template-columns: 1fr;
-    }
-  
-  
-  }
+.hero__section {
+  background: url("https://fluffandfoldlaundromat.com/wp-content/uploads/2020/10/5-Benefits-of-a-Laundry-Service.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 50vh;
+  display: flex;
+  justify-content: flex-end;
+}
 
-  .service img{
-    width: 300px;
+.hero__section .text {
+  color: black;
+  font-family: "Ephesis";
+  width: 50%;
+  /* text-decoration: underline; */
+}
+
+.hero__section h1 {
+  color: black;
+  font-size: 8rem;
+  font-family: "Ephesis", cursive;
+  text-decoration: underline;
+}
+
+.hero__section p {
+  color: black;
+  font-size: 2rem;
+  font-family: "Ephesis", cursive;
+}
+
+.other__services .links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 32px;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 20%;
+  padding-bottom: 5%;
+}
+
+.other__services .links .link {
+  text-align: center;
+  background: #393e46;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.other__services .links .link a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 1023px) {
+  .other__services .links {
+    margin: 32px 10%;
   }
-  
+}
+
+@media (max-width: 767px) {
+  .hero__section h1 {
+    font-size: 5.5rem;
+    text-align: center;
+  }
+  .service__container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .other__services .links {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service img {
+  width: 300px;
+}

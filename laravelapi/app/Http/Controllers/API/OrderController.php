@@ -10,7 +10,6 @@ class OrderController extends Controller
 {
     public function store(Request $request)
     {
-        error_log('Some message here.');
         $order = new Order;
         $order->e_id = $request->input('e_id');
         $order->c_id = $request->input('c_id');
@@ -19,6 +18,8 @@ class OrderController extends Controller
         $order->amount = $request->input('amount');
         $order->status = $request->input('status');
         $order->type = $request->input('type');
+        $order->paymentMethod = $request->input('paymentMethod');
+        $order->paymentStatus = $request->input('paymentStatus');
         $order->miscellaneous = $request->input('miscellaneous');
         $order->save();
 
@@ -31,7 +32,6 @@ class OrderController extends Controller
 
     public function getOrders(Request $request)
     {
-        error_log('Some message here.');
         $orders = Order::all();
         return response()->json([
             'status' => 200,
@@ -40,9 +40,8 @@ class OrderController extends Controller
         ]);
     }
 
-    public function editOrder($id)
+    public function getOrder($id)
     {
-        error_log('Some message here.');
         $order = Order::find($id);
 
         return response()->json([
@@ -63,12 +62,37 @@ class OrderController extends Controller
         $order->amount = $request->input('amount');
         $order->status = $request->input('status');
         $order->type = $request->input('type');
+        $order->type = $request->input('paymentMethod');
+        $order->type = $request->input('paymentStatus');
         $order->miscellaneous = $request->input('miscellaneous');
         $order->update();
 
         return response()->json([
             'status' => 200,
             'message' => 'Order updated successfully'
+
+        ]);
+    }
+
+    public function deleteOrder($id)
+    {
+        $order = Order::find($id);
+        $order->delete();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Order deleted successfully'
+
+        ]);
+    }
+
+    public function getOrderByCustomerId($customerId)
+    {
+        $customerOrders = Order::where('c_id', $customerId)->get();
+
+        return response()->json([
+            'status' => 200,
+            'customerOrders' => $customerOrders
 
         ]);
     }

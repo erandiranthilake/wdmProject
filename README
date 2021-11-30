@@ -1,0 +1,24 @@
+To run the project.
+
+1. Clone the project to your local repository.
+2. Start your mySQL server and create a database call 'instawash' (tables will be created and populated by the migrations)
+3. Navigate to laravelapi folder and run the following command.
+   (assuming we are building the laravel project using composer)
+
+'composer update'
+'php artisan migrate'
+'php artisan serve'
+
+4. Navigate to the reactApp folder and run the following commands.
+
+'npm install'
+'npm start'
+
+5. Users with different privilages will be populated in 'serviceuser' table.
+6. login using those credentials to navigate through different portals.
+
+PHASE 4 -> PHASE 5
+
+In phase 4 we had the php APIs written in the .php files and calling then from the front end application.
+In phase 5 we have adopted teh Laravel Framework and have used the Models, Controllers to build the APIs.
+In addition we used the migration functionality of teh framework to create the tables and seed them with data.

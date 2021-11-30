@@ -23,13 +23,15 @@ class CreateOrdersTable extends Migration
             $table->double('amount');
             $table->char('status');
             $table->char('type');
+            $table->char('paymentMethod');
+            $table->char('paymentStatus');
             $table->char('miscellaneous');
             $table->timestamps();
         });
 
-        DB::statement("INSERT INTO `orders` (`id`, `e_id`, `c_id`, `weight`, `service`, `amount`, `status`, `type`, `miscellaneous`, `created_at`, `updated_at`) VALUES
-        (1, 1, 1, 25, 'Washing', 250, 'Complete', 'pickup', 'Comments', '2021-11-28 05:24:52', '2021-11-28 05:31:50'),
-        (2, 2, 2, 34, 'Drying', 45, 'Pending', 'Pickup', 'Customer pickup', '2021-11-28 05:42:50', '2021-11-28 05:42:50');");
+        DB::statement("INSERT INTO `orders` (`id`, `e_id`, `c_id`, `weight`, `service`, `amount`, `status`, `type`, `paymentMethod`,`paymentStatus`, `miscellaneous`, `created_at`, `updated_at`) VALUES
+        (1, 1, 1, 25, 'Washing', 250, 'Complete', 'Pickup', 'Credit card','Not Completed','No Comments', '2021-11-28 05:24:52', '2021-11-28 05:31:50'),
+        (2, 2, 2, 34, 'Drying', 45, 'Pending', 'Pickup', 'Credit card','Not Completed', 'Customer pickup', '2021-11-28 05:42:50', '2021-11-28 05:42:50');");
     }
 
     /**
