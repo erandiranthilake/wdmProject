@@ -20,6 +20,7 @@ import UpdateEquipment from "./components/Equipment/UpdateEquipment";
 import ServiceRegistration from "./components/Services/ServiceRegistration";
 import UpdateService from "./components/Services/UpdateService";
 import DeleteService from "./components/Services/DeleteService";
+import UpdateServiceUser from "./components/ServiceUser/UpdateServiceUser";
 
 import SuperadminPortal from "./components/Portal/SuperadminPortal";
 import ManagerRegistration from "./components/Register/ManagerRegistration";
@@ -83,6 +84,7 @@ function App() {
         <Route path="/updateOrder/:id" component={UpdateOrder} />
         <Route path="/updateEquipment/:id" component={UpdateEquipment} />
         <Route path="/updateService/:id" component={UpdateService} />
+        <Route path="/updateServiceUser/:id" component={UpdateServiceUser} />
 
         <Route path="/chatbot">
           <Chatbot />

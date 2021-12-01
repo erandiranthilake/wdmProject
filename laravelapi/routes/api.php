@@ -18,6 +18,7 @@ Route::get('/orders/customer/{id}', [OrderController::class, 'getOrderByCustomer
 Route::post('/add-serviceuser', [ServiceUserController::class, 'addServiceUser']);
 Route::get('/serviceusers', [ServiceUserController::class, 'getServiceUsers']);
 Route::get('/get-serviceuser/{id}', [ServiceUserController::class, 'getServiceUser']);
+Route::put('/update-serviceuser/{id}', [ServiceUserController::class, 'updateServiceUser']);
 Route::get('/serviceuser-email/{email}', [ServiceUserController::class, 'getServiceUserByEmail']);
 Route::get('/serviceuser-role/{role}', [ServiceUserController::class, 'getServiceUsersByRole']);
 

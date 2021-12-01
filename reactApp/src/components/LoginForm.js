@@ -21,19 +21,22 @@ const LoginForm = () => {
       }}
       onSubmit={async (values, { setSubmitting }) => {
         console.log(values);
-        const res = await axios.get(
-          `http://127.0.0.1:8000/api/serviceuser-email/${values.email}`
-        );
 
-        if (res.data.status === 200) {
-          localStorage.setItem(
-            "userRoles",
-            JSON.stringify([res.data.serviceUser.Role])
+        try {
+          const res = await axios.get(
+            `http://127.0.0.1:8000/api/serviceuser-email/${values.email}`
           );
-          localStorage.setItem("id", res.data.serviceUser.id);
-          history.replace("/");
-          window.location.reload();
-        } else {
+
+          if (res.data.status === 200) {
+            localStorage.setItem(
+              "userRoles",
+              JSON.stringify([res.data.serviceUser.Role])
+            );
+            localStorage.setItem("id", res.data.serviceUser.id);
+            history.replace("/");
+            window.location.reload();
+          }
+        } catch (error) {
           alert("Email or Password not valid");
         }
       }}

@@ -105,12 +105,12 @@ class Register extends Component {
           <td>{item.City}</td>
           <td>
             <button className="order">
-              <Link to={`/updateService/${item.id}`}>Edit</Link>
+              <Link to={`/updateServiceUser/${item.id}`}>Edit</Link>
             </button>
           </td>
           <td>
             <button className="order">
-              <Link to={`/deleteService/${item.id}`}>Delete</Link>
+              <Link to={`/deleteServiceUser/${item.id}`}>Delete</Link>
             </button>
           </td>
         </tr>
